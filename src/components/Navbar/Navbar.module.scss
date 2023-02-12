@@ -1,0 +1,58 @@
+@use '../../assets/styles/utils.scss' as *;
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    background-color: transparent;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 1.75rem;
+  }
+}
+
+.nav_link {
+  position: relative;
+  color: var(--c-neutral-600);
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    translate: -50% 0;
+    background-color: var(--c-pink-accent-300);
+    width: 0;
+    height: 2px;
+    transition: width 0.2s ease;
+  }
+
+  &[aria-current=page] {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @include hover {
+    color: var(--c-neutral-800);
+    
+    &::after {
+      width: 100%;
+    }
+  }
+}

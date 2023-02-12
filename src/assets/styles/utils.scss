@@ -1,0 +1,41 @@
+// MIXINS
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint($device, $size, $prefix: max) {
+  $breakpoints: (
+    'desktop': (
+      'lg': 1920px,
+      'md': 1440px,
+      'sm': 1366px
+    ),
+    'mobile': (
+      'lg': 912px,
+      'md': 768px,
+      'sm': 426px
+    )
+  );
+  @media (#{$prefix}-width: map-get(map-get($breakpoints, $device), $size)) {
+    @content;
+  }
+}
+
+
+// FUNCTIONS
+@function deepMap($map, $keys...) {
+  @each $key in $keys {
+      @if map-has-key($map, $key) {
+          $map: map-get($map, $key);
+      } @else {
+          $_: log("#{$key} key doesn't exist");
+          @return null;
+      }
+  }
+
+  @return $map;
+}

@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: url('./assets/illustrations/hero-border.svg'), url('./assets/images/home-hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto, 100% auto;
+  background-position: 0 612px, top;
+}
