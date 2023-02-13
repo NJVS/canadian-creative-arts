@@ -4,9 +4,9 @@ import Logo from '../../assets/logos/cca-logo.png';
 import global from '../../assets/styles/globalstyles.module.scss';
 import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({ solidBackground }) => {
   return (
-    <nav className={`${styles.navbar} ${global.container}`}>
+    <nav className={`${styles.navbar} ${(solidBackground) ? styles.solid : '' } ${global.container}`}>
       <div className={global.container}>
         <Link to='/'>
           <img src={Logo} alt="canadian createive arts logo" />
