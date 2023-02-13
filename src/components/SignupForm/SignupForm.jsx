@@ -1,5 +1,9 @@
 import { useState } from 'react';
 
+import InputSelect from './InputSelect';
+
+import { upcomingFairs } from '../../data/selectOptions';
+
 import global from '../../assets/styles/globalstyles.module.scss';
 import styles from './SignupForm.module.scss';
 
@@ -17,7 +21,8 @@ const SignupForm = () => {
           <h3>About you</h3>
           <form className={styles.form}>
             <div>
-              <input type="text" placeholder='Which fair are you going to?' />
+              {/* <input type="text" placeholder='Which fair are you going to?' /> */}
+              <InputSelect options={upcomingFairs} placeholder="Which fair are you going to?" />
               <div className={styles.input_group}>
                 <input type="text" placeholder='Firt name' />
                 <input type="text" placeholder='Last name' />

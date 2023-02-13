@@ -40,7 +40,7 @@
     border-radius: 0 1rem 1rem 1rem;
     box-shadow: 0 15px 20px 10px rgba(#818181, 0.15);
 
-    li {
+    >li {
       display: none;
       flex-direction: column;
       gap: 1rem;
@@ -90,5 +90,9 @@
     border-radius: 0.375rem;
     font-family: var(--ff-secondary);
     font-size: 1.125rem;
+
+    &::placeholder {
+      color: var(--c-neutral-600);
+    }
   }
 }
