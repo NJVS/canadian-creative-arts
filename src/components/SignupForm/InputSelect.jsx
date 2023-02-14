@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './InputSelect.module.scss';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/chevron-down-solid.svg';
 
-const InputSelect = ({ options, placeholder }) => {
+const InputSelect = ({ options, placeholder, defaultValueId, icon }) => {
   const [value, setValue] = useState(null);
   const [toggled, setToggled] = useState(false);
+
+  useEffect(() =>{
+    if (defaultValueId) {
+      const option = options.find(option => option.id === defaultValueId);
+      setValue(option.name);
+    }
+  }, [])
 
   function selectHandler(id) {
     const option = options.find(option => option.id === id);
@@ -25,7 +32,7 @@ const InputSelect = ({ options, placeholder }) => {
         onClick={() => setToggled(!toggled)}
       >
         {(value === null) ? placeholder : value}
-        <ArrowIcon />
+        {icon && <ArrowIcon />}
       </button>
       <div className={`${styles.options} ${toggled ? styles.active : ''}`}>
         {options.map(option => (
@@ -40,6 +47,11 @@ const InputSelect = ({ options, placeholder }) => {
       </div>
     </div>
   )
+}
+
+InputSelect.defaultProps = {
+  defaultValueId: false,
+  icon: true,
 }
 
 export default InputSelect

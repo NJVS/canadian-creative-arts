@@ -23,25 +23,21 @@ export const courses = [
 ]
 
 // https://gist.github.com/anubhavshrimal/75f6183458db8c453306f93521e93d37
-export const countries = [
+export const dialCode = [
   {
-    "name": "Philippines",
-    "dial_id": "+63",
-    "id": "PH"
+    name: "+63 - Philippines",
+    id: "PH+63"
   },
   {
-    "name": "United Arab Emirates",
-    "dial_id": "+971",
-    "id": "AE"
+    name: "+971 - United Arab Emirates",
+    id: "AE+971"
   },
   {
-    "name": "United States",
-    "dial_id": "+1",
-    "id": "US"
+    name: "+1 - United States",
+    id: "US+1"
   },
   {
-    "name": "Qatar",
-    "dial_id": "+974",
-    "id": "QA"
+    name: "+974 - Qatar",
+    id: "QA+974"
   },
 ]

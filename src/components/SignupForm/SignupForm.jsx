@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import InputSelect from './InputSelect';
 
-import { upcomingFairs } from '../../data/selectOptions';
+import { upcomingFairs, levelOfStudy, courses, dialCode } from '../../data/selectOptions';
 
 import global from '../../assets/styles/globalstyles.module.scss';
 import styles from './SignupForm.module.scss';
@@ -21,7 +21,6 @@ const SignupForm = () => {
           <h3>About you</h3>
           <form className={styles.form}>
             <div>
-              {/* <input type="text" placeholder='Which fair are you going to?' /> */}
               <InputSelect options={upcomingFairs} placeholder="Which fair are you going to?" />
               <div className={styles.input_group}>
                 <input type="text" placeholder='Firt name' />
@@ -29,15 +28,18 @@ const SignupForm = () => {
               </div>
               <input type="email" placeholder='Email' />
               <input type="email" placeholder='Confirm Email' />
-              <input type="email" placeholder='Date of Birth' />
+              <input type="text" placeholder='Date of Birth' 
+                onFocus={e => e.target.type = 'date' } 
+                onBlur={e => e.target.type = 'text'}
+              />
               <div className={styles.input_group}>
-                <input type="text" placeholder='+971 - United Arab Emirates' />
-                <input type="text" placeholder='Mobile' />
+                <InputSelect options={dialCode} defaultValueId='AE+971' icon={false} />
+                <input type="number" placeholder='Mobile' />
               </div>
-              <input type="text" placeholder='What is your current level of study' />
-              <input type="text" placeholder='What are you planning to study' />
+              <InputSelect options={levelOfStudy} placeholder='What is your current level of study' />
+              <InputSelect options={courses} placeholder='What are you planning to study' />
             </div>
-            <button type='button' className={global.btn}>Next</button>
+            <button type='button' className={global.btn} onClick={() => setStep(2)} >Next</button>
           </form>
         </li>
         <li className={(step === 2) ? styles.form_active : ''}>
@@ -58,7 +60,7 @@ const SignupForm = () => {
               </div>
             </div>
             <div>
-              <button className={global.btn}>Previous</button>
+              <button type='button' className={global.btn} onClick={() => setStep(1)}>Previous</button>
               <button className={global.btn}>Submit</button>
             </div>
           </form>
