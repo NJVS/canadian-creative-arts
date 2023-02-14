@@ -73,7 +73,7 @@
   }
 
   .form_group {
-    label {
+    > label {
       display: block;
       color: var(--c-blue-accent-400);
       font-family: var(--ff-primary);

@@ -15,11 +15,26 @@ export const levelOfStudy = [
   { name: `Others`, id: 'NNQM3856' },
 ]
 
-export const courses = [
+export const typeOfStudies = [
   { name: `Front-end Development`, id: 'HRRS5923' },
   { name: `Back-end Development`, id: 'HSHS2455' },
   { name: `Fullstack Development`, id: 'KSKM58388' },
   { name: `UI/UX`, id: 'KKFS2955' },
+]
+
+export const courses = [
+  { name: `Web Development Fundamentals`, id: 'JSLE8935' },
+  { name: `Javascript Zero to Hero`, id: 'IEMG9833' },
+  { name: `Database Management System`, id: 'JEGR8390' },
+  { name: `Content Management System (WordPress)`, id: 'OEUR8450' },
+  { name: `ReactJS Fundamentals`, id: 'MNHQ8453' },
+  { name: `Mastering Angular`, id: 'FKSK2552' },
+  { name: `Vue Crashcourse`, id: 'OOES9402' },
+  { name: `Webpack Fundamentals`, id: 'FASK0394' },
+  { name: `Undersanding UI/UX`, id: 'OOGN5823' },
+  { name: `Color Theory`, id: 'PQOE0311' },
+  { name: `AdobeXD Crashcourse`, id: 'OOTO2000' },
+  { name: `Figma`, id: 'GEHH3990' },
 ]
 
 // https://gist.github.com/anubhavshrimal/75f6183458db8c453306f93521e93d37

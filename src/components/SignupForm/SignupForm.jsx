@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import InputSelect from './InputSelect';
 
-import { upcomingFairs, levelOfStudy, courses, dialCode } from '../../data/selectOptions';
+import { upcomingFairs, levelOfStudy, typeOfStudies, courses, dialCode } from '../../data/selectOptions';
 
 import global from '../../assets/styles/globalstyles.module.scss';
 import styles from './SignupForm.module.scss';
+import InputCheckbox from './InputCheckbox';
 
 const SignupForm = () => {
   const [step, setStep] = useState(1);
@@ -48,7 +49,8 @@ const SignupForm = () => {
             <div>
               <div className={styles.form_group}>
                 <label htmlFor="#courses">What course are you interested in?</label>
-                <input type="text" id='courses' placeholder='You can select multiple options' />
+                {/* <input type="text" id='courses' placeholder='You can select multiple options' /> */}
+                <InputCheckbox options={courses} name='courses' />
               </div>
               <div className={styles.form_group}>
                 <label htmlFor="#countries">What countries are you interested in?</label>
