@@ -1,7 +1,8 @@
-.input_select {
+.container {
   position: relative;
 
-  .toggler {
+  // button
+  button.toggler {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,6 +16,8 @@
     font-size: 1.125rem;
     text-align: start;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
 
     >svg {
@@ -36,6 +39,7 @@
     }
   }
 
+  // options
   .options {
     position: absolute;
     top: calc(100% + 0.5rem);
@@ -51,6 +55,16 @@
 
     &.active {
       display: flex;
+    }
+
+    // no option found
+    >p {
+      display: block;
+      padding: 1rem;
+      color: var(--c-neutral-600);
+      font-family: var(--ff-secondary);
+      font-size: 1.25rem;
+      text-align: center;
     }
 
     label {
@@ -70,6 +84,10 @@
       &:hover {
         color: var(--c-pink-accent-300);
         background-color: var(--c-neutral-100);
+      }
+
+      >input[type=radio] {
+        display: none;
       }
     }
   }

@@ -1,5 +1,6 @@
 import global from '../../assets/styles/globalstyles.module.scss';
-import SignupForm from '../../components/SignupForm/SignupForm';
+import MultiStepForm from './MultiStepForm';
+// import SignupForm from '../../components/SignupForm/SignupForm';
 import styles from './Signup.module.scss';
 
 const Signup = () => {
@@ -9,7 +10,8 @@ const Signup = () => {
         <section className={styles.hero}>
           <h1>Registration</h1>
         </section>
-        <SignupForm />
+        {/* <SignupForm /> */}
+        <MultiStepForm />
       </div>
     </main>
   )

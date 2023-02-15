@@ -1,7 +1,7 @@
 .container {
   position: relative;
 
-  .toggler {
+  ul.toggler {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -11,36 +11,46 @@
     border: 1px solid var(--c-neutral-400);
     border-radius: 0.375rem;
     font-family: var(--ff-secondary);
+    user-select: none;
     cursor: pointer;
 
-    .toggler_placeholder {
+    li.placeholder {
       color: var(--c-neutral-600);
       font-size: 1.125rem;
       pointer-events: none;
     }
 
-    .selected_item {
+    li.selected {
+      display: flex;
       background-color: var(--c-neutral-200);
       border: 1px solid var(--c-neutral-700);
       border-radius: 3px;
       color: var(--c-neutral-700);
-      
-      font-weight: 700;
+      font-weight: 500;
 
       button {
+        display: flex;
+        align-items: center;
+        padding: 0.375rem;
         background-color: transparent;
         border: none;
         border-right: 1px solid var(--c-neutral-700);
-        transition: all 0.2s ease;
+        color: var(--c-neutral-600);
+        font-weight: 700;
+        line-height: 1;
         cursor: pointer;
-
-        &:hover  {
+        &:hover {
           color: var(--c-pink-accent-300);
         }
       }
 
       span {
-        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        padding: 0 0.75rem;
+        font-weight: 500;
+        line-height: 1;
+        color: var(--c-neutral-900);
       }
     }
   }
@@ -52,8 +62,6 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    max-height: 500px;
-    overflow: scroll;
     background-color: var(--c-white);
     border: 1px solid var(--c-neutral-400);
     border-radius: 0.375rem;
@@ -62,6 +70,16 @@
 
     &.active {
       display: flex;
+    }
+
+    // no option found
+    >p {
+      display: block;
+      padding: 1rem;
+      color: var(--c-neutral-600);
+      font-family: var(--ff-secondary);
+      font-size: 1.25rem;
+      text-align: center;
     }
 
     label {
@@ -74,6 +92,10 @@
       transition: all 0.2s ease;
       cursor: pointer;
 
+      &.active {
+        color: var(--c-pink-accent-300);
+      }
+
       &:last-of-type {
         border-bottom: none;
       }
@@ -83,11 +105,7 @@
         background-color: var(--c-neutral-100);
       }
 
-      &.active {
-        color: var(--c-pink-accent-300);
-      }
-
-      input[type=checkbox] {
+      >input[type=checkbox] {
         display: none;
       }
     }
