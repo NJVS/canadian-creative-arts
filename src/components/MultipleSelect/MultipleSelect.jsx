@@ -48,7 +48,7 @@ const MultipleSelect = ({ options, placeholder, name }) => {
               className={isSelected(option.id) ? styles.active : ''}
             >
               {option.name}
-              <input type='checkbox' name={name} id={`${name}_${option.id}`}
+              <input type='checkbox' name={name} id={`${name}_${option.id}`} value={option.name}
                 onChange={e => (e.target.checked) ? addOption(option) : deleteOption(option.id)}
                 checked={isSelected(option.id)}
               />

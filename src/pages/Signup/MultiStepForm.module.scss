@@ -60,6 +60,12 @@
           grid-template-columns: 1fr 1fr;
           gap: 1rem 2rem;
         }
+
+        .input_group {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem 2rem;
+        }
       }
     }
   }

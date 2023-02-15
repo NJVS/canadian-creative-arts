@@ -86,9 +86,23 @@
         background-color: var(--c-neutral-100);
       }
 
-      >input[type=radio] {
-        display: none;
-      }
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+  }
+
+  &.error {
+    button.toggler {
+      border-color: var(--c-pink-accent-300);
+    }
+    .error_message {
+      margin-left: 0.5rem;
+      color: var(--c-pink-accent-300);
+      font-family: var(--ff-secondary);
+      font-size: 0.875rem;
+      font-weight: 600;
     }
   }
 }
