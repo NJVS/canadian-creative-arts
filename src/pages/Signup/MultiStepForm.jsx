@@ -11,8 +11,13 @@ import styles from './MultiStepForm.module.scss';
 const MultiStepForm = () => {
   const [formStep, setFormStep] = useState(2);
   const [invalidInputs, setInvalidInputs] = useState([]);
-  // const [firstFormVal, setFirstFormVal] = useState({});
-  // const [secondFormval, setSecondFormVal] = useState({});
+
+  // test for form 2
+  const [inp1, setInp1] = useState(null)
+  const [inp2, setInp2] = useState(null)
+  const [inp3, setInp3] = useState(null)
+
+  
   function nextStepHandler(event) {
     event.preventDefault();
 
@@ -21,12 +26,33 @@ const MultiStepForm = () => {
       .then(data => {
         setInvalidInputs([]);
         setFormStep(2);
+        for (const [name, value] of data) {
+          console.log({[name]: value});
+        }
       })
       .catch(data => {
         console.log('rejected');
         console.log(data);
         setInvalidInputs(data);
       });
+  }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    // console.log([inp1, inp2, inp3]);
+    const data = new FormData();
+    data.set(inp1[0], inp1[1]);
+    data.set(inp2[0], inp2[1]);
+    data.set(inp3[0], inp3[1]);
+    validateForm(data)
+      .then(data => {
+        for (const [name, value] of data) {
+          console.log(name, value);
+        }
+      })
+      .catch(data => {
+        console.log('rejected', data)
+      })
   }
 
   function checkForError(name) {
@@ -90,24 +116,24 @@ const MultiStepForm = () => {
         </li>
         <li className={(formStep === 2) ? styles.form_active : ''}>
           <h3>Select your interest:</h3>
-          <form>
+          <form onSubmit={submitHandler}>
             <div>
               <div className={global.form_group}>
                 <label htmlFor="">What course are you interested in?</label>
-                <MultipleSelect options={courses} name='interested_courses' />
+                <MultipleSelect options={courses} name='interested_courses' setFormData={setInp1} />
               </div>
               <div className={global.form_group}>
                 <label htmlFor="">What countries are you interested in?</label>
-                <MultipleSelect options={courses} name='interested_countries' />
+                <MultipleSelect options={courses} name='interested_countries' setFormData={setInp2} />
               </div>
               <div className={global.form_group}>
                 <label htmlFor="">What areas are you interested in?</label>
-                <MultipleSelect options={courses} name='interested_areas' />
+                <MultipleSelect options={courses} name='interested_areas' setFormData={setInp3} />
               </div>
             </div>
             <div>
               <button type='button' className={global.btn} onClick={() => setFormStep(1)}>Previous</button>
-              <button className={global.btn}>Submit</button>
+              <button type='submit' className={global.btn}>Submit</button>
             </div>
           </form>
         </li>

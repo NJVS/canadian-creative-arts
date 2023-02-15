@@ -10,7 +10,7 @@ export function validateForm(formData) {
       // console.log(`Name: ${name}, Value: ${value}`)
       // console.log(type);
 
-      if (value === '') { // blank input validation
+      if (value.length === 0) { // blank input validation
         invalidData.push({ name: name, msg:"Input is required" });
       } else {            // validate depends on case
         switch (name) {

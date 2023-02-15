@@ -1,15 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './MultipleSelect.module.scss';
 
-const temp = [
-  { id: 'KSFT0038', value: 'test 1' },
-  { id: 'UGDJ8475', value: 'test 2' },
-]
-
-const MultipleSelect = ({ options, placeholder, name }) => {
+const MultipleSelect = ({ options, placeholder, name, invalid, setFormData }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
+  // const [inputData, setInputData] = useState([ name, [] ])
   const [isToggled, setIsToggled] = useState(false);
-  const containerRef = useRef(null)
 
   function deleteOption(id) {
     setSelectedOptions(selectedOptions.filter(data => data.id !== id));
@@ -24,9 +19,13 @@ const MultipleSelect = ({ options, placeholder, name }) => {
   function isSelected(id) {
     return selectedOptions.findIndex(selectedOption => selectedOption.id === id) >= 0
   }
+  
+  useEffect(() => {
+    setFormData([ name, selectedOptions.map(item => item.value) ]);
+  }, [selectedOptions])
 
   return (
-    <div ref={containerRef} className={styles.container}
+    <div className={styles.container}
     // onBlur={(e) => setIsToggled(false)}
     >
       <ul className={styles.toggler} onClick={e => (e.target.tagName !== "BUTTON") && setIsToggled(!isToggled)}>
