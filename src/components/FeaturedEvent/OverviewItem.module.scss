@@ -8,19 +8,21 @@
     gap: 1.5rem;
     color: var(--c-blue-accent-400);
     font-family: var(--ff-primary);
-    font-size: 1.5rem;
+    font-size: var(--fs-500);
     font-weight: 700;
+
+    svg {
+      height: 20px;
+      fill: var(--c-pink-accent-300);
+    }
   }
 
   p {
     color: var(--c-neutral-800);
     font-family: var(--ff-secondary);
-    font-size: 1.125rem;
+    font-size: var(--fs-300);
     font-weight: 600;
   }
 
-  svg {
-    height: 30px;
-    fill: var(--c-pink-accent-300);
-  }
+  
 }

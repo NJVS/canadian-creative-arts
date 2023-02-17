@@ -27,7 +27,7 @@ const FeaturedEvent = () => {
           ))}
         </ul>
       </article>
-      <Link to="/events" className={`${global.btn} ${global.btn_f_lg}`}>Click to change city Abu Dhabi</Link>
+      <Link to="/" className={`${global.btn} ${global.btn_f_lg}`}>Click to change city Abu Dhabi</Link>
     </section>
   )
 }

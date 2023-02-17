@@ -3,7 +3,6 @@ import styles from './MultipleSelect.module.scss';
 
 const MultipleSelect = ({ options, placeholder, name, invalid, setFormData }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-  // const [inputData, setInputData] = useState([ name, [] ])
   const [isToggled, setIsToggled] = useState(false);
 
   function deleteOption(id) {
@@ -21,15 +20,16 @@ const MultipleSelect = ({ options, placeholder, name, invalid, setFormData }) =>
   }
   
   useEffect(() => {
-    setFormData([ name, selectedOptions.map(item => item.value) ]);
+    let values = selectedOptions.map(data => data.value);
+    setFormData(prevState => ({...prevState, [name]: values}))
   }, [selectedOptions])
 
   return (
-    <div className={styles.container}
+    <div className={`${styles.container} ${invalid ? styles.error : ''}`}
     // onBlur={(e) => setIsToggled(false)}
     >
       <ul className={styles.toggler} onClick={e => (e.target.tagName !== "BUTTON") && setIsToggled(!isToggled)}>
-        {selectedOptions.length == 0 ? (<li className={styles.placeholder}>{placeholder}</li>) : (
+        {selectedOptions.length === 0 ? (<li className={styles.placeholder}>{placeholder}</li>) : (
           selectedOptions.map(option => (
             <li key={option.id} className={styles.selected}>
               <button type='button' onClick={() => deleteOption(option.id)}>x</button>
@@ -38,6 +38,9 @@ const MultipleSelect = ({ options, placeholder, name, invalid, setFormData }) =>
           ))
         )}
       </ul>
+
+      {invalid && (<p className={styles.error_message}>{invalid}</p>)}
+
       <div className={`${styles.options} ${isToggled ? styles.active : ''}`}>
         {options.length === 0 ? (<p>No options available!</p>) : (
           options.map(option => (
@@ -62,6 +65,7 @@ const MultipleSelect = ({ options, placeholder, name, invalid, setFormData }) =>
 MultipleSelect.defaultProps = {
   options: [],
   placeholder: 'You can select multiple options',
+  invalid: false,
 }
 
 export default MultipleSelect

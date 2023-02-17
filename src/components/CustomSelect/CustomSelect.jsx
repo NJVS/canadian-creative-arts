@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './CustomSelect.module.scss';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/chevron-down-solid.svg';
 
-const CustomSelect = ({ options, placeholder, name, icon, invalid }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const CustomSelect = ({ options, placeholder, name, icon, invalid, value, setFormData }) => {
   const [isToggled, setIsToggled] = useState(false);
 
-  function isSelected(id) {
-    return selectedOption.findIndex(selectedOption => selectedOption.id === id) >= 0
+  function changeHandler(value) {
+    setFormData(prevState => ({ ...prevState, [name]: value }))
   }
 
   return (
@@ -16,13 +15,13 @@ const CustomSelect = ({ options, placeholder, name, icon, invalid }) => {
         type="button"
         className={`
           ${styles.toggler} 
-          ${(selectedOption !== null) ? styles.selected : ''}
+          ${(value !== '') ? styles.selected : ''}
           ${isToggled ? styles.toggled : ''}
         `}
         onClick={() => setIsToggled(!isToggled)}
         onBlur={() => setTimeout(() => setIsToggled(false), 100)}
       >
-        {(selectedOption === null) ? placeholder : selectedOption}
+        {(value === '') ? placeholder : value}
         {icon && <ArrowIcon />}
       </button>
 
@@ -39,7 +38,7 @@ const CustomSelect = ({ options, placeholder, name, icon, invalid }) => {
               >
                 {option.name}
                 <input type='radio' name={name} id={`${name}_${option.id}`} value={option.name}
-                  onChange={e => (e.target.checked) && setSelectedOption(option.name)}
+                  onChange={e => (e.target.checked) && changeHandler(option.name)}
                 />
               </label>
             ))}

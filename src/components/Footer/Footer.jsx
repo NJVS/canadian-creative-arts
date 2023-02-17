@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <FooterBackground className={styles.footer_background} />
-      <ul>
+      <ul className={global.container}>
         <li>&#169; All Rights Reserved</li>
         <li>
           <ul>

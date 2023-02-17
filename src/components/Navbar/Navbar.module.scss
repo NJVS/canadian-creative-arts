@@ -1,12 +1,16 @@
 @use '../../assets/styles/utils.scss' as *;
 
-.navbar {
+.container {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
 
-  > div {
+  &.solid {
+    background-color: var(--c-white);
+  }
+
+  >div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,50 +18,49 @@
     background-color: transparent;
   }
 
+  img {
+    height: 35px;
+  }
+
   ul {
     display: flex;
     align-items: center;
     list-style-type: none;
     gap: 1.75rem;
-  }
 
-  &.solid {
-    background-color: var(--c-white);
-  }
-}
+    .nav_link {
+      position: relative;
+      color: var(--c-neutral-800);
+      font-family: var(--ff-primary);
+      font-size: var(--fs-200);
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s ease;
 
-.nav_link {
-  position: relative;
-  color: var(--c-neutral-600);
-  font-family: var(--ff-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    translate: -50% 0;
-    background-color: var(--c-pink-accent-300);
-    width: 0;
-    height: 2px;
-    transition: width 0.2s ease;
-  }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        translate: -50% 0;
+        background-color: var(--c-pink-accent-300);
+        width: 0;
+        height: 2px;
+        transition: width 0.2s ease;
+      }
 
-  &[aria-current=page] {
-    &::after {
-      width: 100%;
-    }
-  }
+      &[aria-current=page] {
+        &::after {
+          width: 100%;
+        }
+      }
 
-  @include hover {
-    color: var(--c-neutral-800);
-    
-    &::after {
-      width: 100%;
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
     }
   }
 }

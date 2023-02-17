@@ -38,6 +38,15 @@ export const courses = [
 ]
 
 // https://gist.github.com/anubhavshrimal/75f6183458db8c453306f93521e93d37
+export const countries = [
+  { name: "Afghanistan", id: "QA+974" },
+  { name: "Brazil", id: "BR+55" },
+  { name: "China", id: "CN+86" },
+  { name: "Colombia", id: "CO+57" },
+  { name: "Philippines", id: "PH+63" },
+  { name: "United Arab Emirates", id: "AE+971" },
+  { name: "United States", id: "US+1" },
+]
 export const dialCode = [
   {
     name: "+63 - Philippines",

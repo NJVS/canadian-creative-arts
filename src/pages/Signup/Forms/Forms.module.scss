@@ -1,22 +1,22 @@
 .container {
-  ul.tabs {
+  ul.step_tabs {
     position: relative;
     display: flex;
 
     li {
-      padding: 0.5rem 3rem;
+      padding: 0.375rem 2.75rem;
       background-color: var(--c-neutral-400);
       border-radius: 1rem 1rem 0 0;
       color: var(--c-neutral-600);
       font-family: var(--ff-primary);
-      font-size: 1.75rem;
+      font-size: var(--fs-600);
       font-weight: 700;
 
       &:last-of-type {
         translate: -10px 0;
       }
 
-      &.tab_active {
+      &.current_step {
         background-color: var(--c-white);
         color: var(--c-blue-accent-400);
         z-index: 9
@@ -24,7 +24,9 @@
     }
   }
 
-  ul.forms {
+
+
+  .step_forms {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -33,38 +35,38 @@
     border-radius: 0 1rem 1rem 1rem;
     box-shadow: 0 15px 20px 10px rgba(#818181, 0.15);
 
-    >li {
-      display: none;
+    form {
+      display: flex;
       flex-direction: column;
-      gap: 1rem;
-
-      &.form_active {
-        display: flex;
-      }
+      gap: 0.75rem;
 
       h3 {
         color: var(--c-blue-accent-400);
         font-family: var(--ff-primary);
-        font-size: 1.75rem;
-        font-weight: 400;
+        font-size: var(--fs-600);
+        font-weight: 600;
       }
 
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-
-        >div {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem 2rem;
-        }
+      >div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem 2rem;
 
         .input_group {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1rem 2rem;
+        }
+      }
+
+      .form_group {
+        >label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: var(--c-blue-accent-400);
+          font-family: var(--ff-primary);
+          font-size: var(--fs-500);
+          font-weight: 600;
         }
       }
     }

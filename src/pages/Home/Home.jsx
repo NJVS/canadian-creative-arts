@@ -18,7 +18,7 @@ const Home = () => {
             Explore a career in Interactive (Mobile, Web Design, Multimedia); Audiovisual (Animation,
             Film, Video, Audio), Digital Marketing, Virtual Reality, Art, Video Games, and much more.
           </p>
-          <Link to="/signup" className={`${global.btn} ${global.btn_f_lg}`}>Register to Attend</Link>
+          <Link to="/signup" className={`${global.btn} ${global.btn_lg}`}>Register to Attend</Link>
         </section>
         <FeaturedEvent />
       </div>
