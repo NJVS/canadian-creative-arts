@@ -9,15 +9,16 @@
 
 @mixin breakpoint($device, $size, $prefix: max) {
   $breakpoints: (
-    'desktop': (
-      'lg': 1920px,
-      'md': 1440px,
-      'sm': 1366px
+    desktop: (
+      lg: 1920px,
+      md: 1440px,
+      sm: 1200px
     ),
-    'mobile': (
-      'lg': 912px,
-      'md': 768px,
-      'sm': 426px
+    mobile: (
+      lg: 912px,
+      md: 768px,
+      sm: 638px,
+      xsm: 475px,
     )
   );
   @media (#{$prefix}-width: map-get(map-get($breakpoints, $device), $size)) {

@@ -1,3 +1,5 @@
+@use '../../assets/styles/utils.scss' as *;
+
 .footer {
   position: relative;
   width: 100%;
@@ -46,6 +48,28 @@
           height: 20px;
         }
       }
+    }
+
+  }
+
+  @include breakpoint(mobile, sm) {
+    > ul {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      translate: 0 0;
+      // width: 90%;
+      margin: auto;
+    }
+
+    >svg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+      width: 150%;
+      z-index: -1;
     }
   }
 }

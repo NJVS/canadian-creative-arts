@@ -30,11 +30,11 @@ const Forms = () => {
 
   return (
     <section className={styles.container}>
-      <ul className={styles.step_tabs}>
+      <ul className={styles.tabs}>
         <li className={(formStep === 1) ? styles.current_step : ''}>Step 1</li>
         <li className={(formStep === 2) ? styles.current_step : ''}>Step 2</li>
       </ul>
-      <div className={styles.step_forms}>
+      <div className={styles.forms}>
         {formStep === 1 ? (
           <FirstStep setFormStep={setFormStep} formData={form1Data} setFormData={setForm1Data} />
         ) : (

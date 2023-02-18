@@ -32,6 +32,10 @@ dd {
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Set core body defaults */
 body {
   width: 100%;
@@ -39,7 +43,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 }
 

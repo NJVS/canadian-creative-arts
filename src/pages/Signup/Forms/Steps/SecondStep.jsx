@@ -52,7 +52,7 @@ const SecondStep = ({ setFormStep, formData, setFormData, previousData }) => {
             invalid={invalidInputs['interested_areas']} setFormData={setFormData} />
         </div>
       </div>
-      <div>
+      <div className={styles.links}>
         <button type='button' className={global.btn} onClick={() => setFormStep(1)}>Previous</button>
         <button type='submit' className={global.btn}>Submit</button>
       </div>

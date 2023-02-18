@@ -7,8 +7,8 @@ import styles from './FeaturedEvent.module.scss';
 
 const FeaturedEvent = () => {
   return (
-    <section className={styles.featured_event}>
-      <article className={styles.event_details}>
+    <section className={styles.container}>
+      <article className={styles.details}>
         <div>
           <h2>{details.address.country} <span>{details.date}</span></h2>
           <p><strong>{details.time}</strong></p>
@@ -19,7 +19,7 @@ const FeaturedEvent = () => {
           <p>{details.address.street}</p>
         </div>
       </article>
-      <article className={styles.event_overview}>
+      <article className={styles.overview}>
         <h3>Invest in your career. Find your perfect course.</h3>
         <ul>
           {overview.map(data => (
