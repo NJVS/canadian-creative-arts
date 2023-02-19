@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/canadian-creative-arts/static/css/main.b4010bd4.css",
-    "main.js": "/canadian-creative-arts/static/js/main.2a5ff500.js",
+    "main.js": "/canadian-creative-arts/static/js/main.067e7e21.js",
     "static/media/registration-hero-background.jpg": "/canadian-creative-arts/static/media/registration-hero-background.b490e6ed3301166c1007.jpg",
     "static/media/home-hero-background.jpg": "/canadian-creative-arts/static/media/home-hero-background.3227edd8533c522b6bd2.jpg",
     "static/media/instagram.svg": "/canadian-creative-arts/static/media/instagram.ba01fa545155dae04a0c40b281a2c6ae.svg",
@@ -18,10 +18,10 @@
     "static/media/facebook-f.svg": "/canadian-creative-arts/static/media/facebook-f.1811443c2e402d962dd14291e8c883b6.svg",
     "static/media/chevron-down-solid.svg": "/canadian-creative-arts/static/media/chevron-down-solid.c84a0bfbda313288feb7aed6b2c86394.svg",
     "main.b4010bd4.css.map": "/canadian-creative-arts/static/css/main.b4010bd4.css.map",
-    "main.2a5ff500.js.map": "/canadian-creative-arts/static/js/main.2a5ff500.js.map"
+    "main.067e7e21.js.map": "/canadian-creative-arts/static/js/main.067e7e21.js.map"
   },
   "entrypoints": [
     "static/css/main.b4010bd4.css",
-    "static/js/main.2a5ff500.js"
+    "static/js/main.067e7e21.js"
   ]
 }
