@@ -7,7 +7,6 @@ import global from '../../assets/styles/globalstyles.module.scss';
 import styles from './Navbar.module.scss';
 
 const Navbar = ({ solidBackground }) => {
-  const { registerAgain } = useContext(FormDataContext);
   const [navToggled, setNavToggled] = useState(false);
 
   return (
@@ -30,7 +29,7 @@ const Navbar = ({ solidBackground }) => {
           <li><NavLink to='/seminars' className={styles.nav_link}>Seminars</NavLink></li>
           <li><NavLink to='/exhibitor' className={styles.nav_link}>Exhibitors</NavLink></li>
           <li><NavLink to='/faq' className={styles.nav_link}>Faq</NavLink></li>
-          <li><NavLink to='/signup' className={`${global.btn}  ${global.btn_sm}`} onClick={() => registerAgain()}>Register</NavLink></li>
+          <li><NavLink to='/register' className={`${global.btn}  ${global.btn_sm}`}>Register</NavLink></li>
         </ul>
       </div>
     </nav>

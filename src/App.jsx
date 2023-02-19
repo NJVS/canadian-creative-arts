@@ -8,7 +8,7 @@ import styles from './App.module.scss';
 
 function App() {
   const routes = useRoutes(Routes);
-  const solidBackground = (useLocation().pathname).includes('/signup');
+  const solidBackground = (useLocation().pathname).includes('/register');
 
   return (
     <FormDataProvider>

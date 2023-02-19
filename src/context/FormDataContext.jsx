@@ -1,23 +1,39 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const initialData = {
+  about: {
+    first_name: '',
+    last_name: '',
+    event_name: '',
+    email: '',
+    email_confirm: '',
+    birth_date: '',
+    dial_code: '',
+    phone_number: '',
+    current_level: '',
+    planning_study: '',
+  },
+  interests: {
+    interested_courses: [],
+    interested_countries: [],
+    interested_areas: []
+  }
+}
 
 const initalState = {
-  registrationStatus: false,
-  formData: {}
+  registrationStatus: 'SUBMITED', // false, TO_REVIEW, SUBMIT_REGISTRATION
 };
 
 
 function reducer(state, action) {
   switch(action.type) {
-    case 'REGISTRATION_COMPLETE':
-      return {
-        registrationStatus: true,
-        formData: action.payload
-      }
-    case 'REGISTRATION_RESET':
-      return {
-        registrationStatus: false,
-        formData: {}
-      }
+    case 'TO_REVIEW':
+      return { registrationStatus: 'TO_REVIEW' }
+    case 'SUBMIT_REGISTRATION':
+      return { registrationStatus: 'SUBMITED' }
+    case 'RESET':
+      return { registrationStatus: false }
     default:
       return state;
   }
@@ -27,28 +43,43 @@ export const FormDataContext = createContext(null);
 
 export const FormDataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initalState);
+  const [aboutData, setAboutData] = useState(initialData.about);
+  const [interestsData, setInterestsData] = useState(initialData.interests);
+  const navigate = useNavigate();
 
-  function registrationComplete(data) {
-    // POST
-
-    // FOR CONTEXT
-    dispatch({
-      type: 'REGISTRATION_COMPLETE',
-      payload: data
-    })
+  function reviewData() {
+    dispatch({ type: 'TO_REVIEW' });
+    navigate('/register/review');
   }
 
-  function registerAgain() {
-    dispatch({ type: 'REGISTRATION_RESET' });
+  function submitApplication() {
+    // POST
+    dispatch({ type: 'SUBMIT_REGISTRATION' });
+
+    // reset formdata
+    setAboutData(initialData.about);
+    setInterestsData(initialData.interests);
+    
+    // navigate to thankyou page
+    navigate('/thankyou')
+  }
+
+  function resetRegistration() {
+    console.log('reseeeet')
+    dispatch({ type: 'RESET' });
   }
 
 
   return (
     <FormDataContext.Provider value={{
-      registrationStatus: state.registrationStatus,
-      formData: state.formData,
-      registrationComplete,
-      registerAgain
+      status: state.registrationStatus,
+      aboutData,
+      interestsData,
+      setAboutData,
+      setInterestsData,
+      reviewData,
+      submitApplication,
+      resetRegistration
     }}>
       {children}
     </FormDataContext.Provider>

@@ -9,22 +9,21 @@ import styles from '../Forms.module.scss';
 import { courses, typeOfStudies, countries } from '../../../../data/selectOptions';
 import { validateForm } from '../../../../utils/validateForm';
 
-const SecondStep = ({ setFormStep, formData, setFormData, previousData }) => {
-  const { registrationComplete } = useContext(FormDataContext);
+const Interests = ({ setFormStep }) => {
+  const { reviewData, interestsData, setInterestsData } = useContext(FormDataContext);
   const [invalidInputs, setInvalidInputs] = useState({});
-  const submitNavigate = useNavigate();
+  const navReview = useNavigate();
 
   function submitHandler(e) {
     e.preventDefault();
 
-    validateForm(formData).then(() => {
+    validateForm(interestsData).then(() => {
       setInvalidInputs([]);
 
-      const allData = {...previousData, ...formData};
-      registrationComplete(allData);
-
-      submitNavigate('/signup/complete');
-
+      setFormStep(1);
+      
+      reviewData();
+  
       console.log('Form 2: no invalid input')
     }).catch(data => {
       console.log('Form 2: invalid inputs found')
@@ -39,17 +38,17 @@ const SecondStep = ({ setFormStep, formData, setFormData, previousData }) => {
         <div className={styles.form_group}>
           <label htmlFor="">What course are you interested in?</label>
           <MultipleSelect options={courses} name='interested_courses'
-            invalid={invalidInputs['interested_courses']} setFormData={setFormData} />
+            invalid={invalidInputs['interested_courses']} setFormData={setInterestsData} />
         </div>
         <div className={styles.form_group}>
           <label htmlFor="">What countries are you interested in?</label>
           <MultipleSelect options={countries} name='interested_countries'
-            invalid={invalidInputs['interested_countries']} setFormData={setFormData} />
+            invalid={invalidInputs['interested_countries']} setFormData={setInterestsData} />
         </div>
         <div className={styles.form_group}>
           <label htmlFor="">What areas are you interested in?</label>
           <MultipleSelect options={typeOfStudies} name='interested_areas'
-            invalid={invalidInputs['interested_areas']} setFormData={setFormData} />
+            invalid={invalidInputs['interested_areas']} setFormData={setInterestsData} />
         </div>
       </div>
       <div className={styles.links}>
@@ -60,4 +59,4 @@ const SecondStep = ({ setFormStep, formData, setFormData, previousData }) => {
   )
 }
 
-export default SecondStep
+export default Interests

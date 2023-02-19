@@ -3,38 +3,36 @@ import { FormDataContext } from "../context/FormDataContext";
 import { Navigate, useLocation } from "react-router-dom";
 
 import Home from "../pages/Home/Home";
-import Signup from "../pages/Signup/Signup";
-import Forms from "../pages/Signup/Forms/Forms";
-import SignupComplete from "../pages/SignupComplete/SignupComplete";
+import Register from "../pages/Register/Register";
+import Forms from "../pages/Register/Forms/Forms";
+import ReviewForms from "../pages/Register/ReviewForms/ReviewForms";
+import Thankyou from "../pages/Thankyou/Thankyou";
 
-const RegistrationRequired = ({ children }) => {
-  const { registrationStatus } = useContext(FormDataContext);
+const DataRequired = ({ children }) => {
+  const { status } = useContext(FormDataContext);
   const location = useLocation();
+  return (status === 'TO_REVIEW') ? (children) : (<Navigate to="/register" replace state={{ path: location.pathname }} />)
+}
 
-  return registrationStatus ? (children) : (
-    <Navigate to="/" replace state={{ path: location.pathname }} />
-  )
+const SubmitRequired = ({ children }) => {
+  const { status } = useContext(FormDataContext);
+  const location = useLocation();
+  return (status === 'SUBMITED') ? (children) : (<Navigate to="/" replace state={{ path: location.pathname }} />)
 }
 
 const Routes = [
+  { path: '/', element: <Home /> },
   {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/signup',
-    element: <Signup />,
+    path: '/register', element: <Register />,
     children: [
       {
         index: true,
         element: <Forms />
       },
-      {
-        path: '/signup/complete',
-        element: <RegistrationRequired><SignupComplete /></RegistrationRequired>
-      }
+      { path: '/register/review', element: <DataRequired><ReviewForms /></DataRequired> },
     ]
   },
+  { path: '/thankyou', element: <SubmitRequired><Thankyou /></SubmitRequired> },
   { path: '*', element: <Navigate to="/" replace /> }
 ];
 

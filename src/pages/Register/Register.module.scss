@@ -1,0 +1,31 @@
+@use '../../assets/styles/utils.scss' as *;
+
+.hero_section {
+  position: relative;
+  background: url('../../assets/images/registration-hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  padding: 9rem 0 15rem;
+  
+  @include breakpoint(mobile, md) {
+    background-size: auto 100%;
+  }
+
+  // border svg
+  >svg {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  h1 {
+    color: var(--c-white);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-900);
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
