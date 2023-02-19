@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/canadian-creative-arts/static/css/main.b4010bd4.css",
+    "main.js": "/canadian-creative-arts/static/js/main.2a5ff500.js",
+    "static/media/registration-hero-background.jpg": "/canadian-creative-arts/static/media/registration-hero-background.b490e6ed3301166c1007.jpg",
+    "static/media/home-hero-background.jpg": "/canadian-creative-arts/static/media/home-hero-background.3227edd8533c522b6bd2.jpg",
+    "static/media/instagram.svg": "/canadian-creative-arts/static/media/instagram.ba01fa545155dae04a0c40b281a2c6ae.svg",
+    "static/media/earth-americas-solid.svg": "/canadian-creative-arts/static/media/earth-americas-solid.8c492c72376bb69cf1bf267e5b2d4265.svg",
+    "index.html": "/canadian-creative-arts/index.html",
+    "static/media/plane-arrival-solid.svg": "/canadian-creative-arts/static/media/plane-arrival-solid.8c1abfc8be93d99033bf152337e46f94.svg",
+    "static/media/rocket-solid.svg": "/canadian-creative-arts/static/media/rocket-solid.27fcb6a2e915045540c1058fc1ecc2af.svg",
+    "static/media/hero-border.svg": "/canadian-creative-arts/static/media/hero-border.ed1c45179f8b4eeffc65.svg",
+    "static/media/circle-check-regular.svg": "/canadian-creative-arts/static/media/circle-check-regular.a4ff73c2d650f1d561b2628261928bec.svg",
+    "static/media/footer-background.svg": "/canadian-creative-arts/static/media/footer-background.95f368d78992ad0f4193bf4592ed615f.svg",
+    "static/media/question-solid.svg": "/canadian-creative-arts/static/media/question-solid.b5d6d4a175171c2f3b97b9612b170c25.svg",
+    "static/media/circle-info-solid.svg": "/canadian-creative-arts/static/media/circle-info-solid.30fbbea1bb8029af0dc492a5f76682ea.svg",
+    "static/media/magnifying-glass-solid.svg": "/canadian-creative-arts/static/media/magnifying-glass-solid.bf7c00a4cf3b50288170bca48fe9fd9a.svg",
+    "static/media/facebook-f.svg": "/canadian-creative-arts/static/media/facebook-f.1811443c2e402d962dd14291e8c883b6.svg",
+    "static/media/chevron-down-solid.svg": "/canadian-creative-arts/static/media/chevron-down-solid.c84a0bfbda313288feb7aed6b2c86394.svg",
+    "main.b4010bd4.css.map": "/canadian-creative-arts/static/css/main.b4010bd4.css.map",
+    "main.2a5ff500.js.map": "/canadian-creative-arts/static/js/main.2a5ff500.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4010bd4.css",
+    "static/js/main.2a5ff500.js"
+  ]
+}
