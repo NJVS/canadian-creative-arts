@@ -34,7 +34,8 @@ const Routes = [
         element: <RegistrationRequired><SignupComplete /></RegistrationRequired>
       }
     ]
-  }
+  },
+  { path: '*', element: <Navigate to="/" replace /> }
 ];
 
 export default Routes;
