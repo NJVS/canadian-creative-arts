@@ -7,7 +7,7 @@ import styles from './FeaturedEvent.module.scss';
 
 const FeaturedEvent = () => {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${global.container}`}>
       <article className={styles.details}>
         <div>
           <h2>{details.address.country} <span>{details.date}</span></h2>

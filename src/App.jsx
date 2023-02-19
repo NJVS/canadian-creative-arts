@@ -7,14 +7,15 @@ import Routes from './routes/routes';
 import styles from './App.module.scss';
 
 function App() {
-  const route = useRoutes(Routes);
+  const routes = useRoutes(Routes);
   const solidBackground = (useLocation().pathname).includes('/signup');
 
   return (
     <FormDataProvider>
       <div className={styles.container}>
         <Navbar solidBackground={solidBackground} />
-        {route}
+        <main>{routes}</main>
+        {/* {route} */}
         <Footer />
       </div>
     </FormDataProvider>

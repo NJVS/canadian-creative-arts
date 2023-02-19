@@ -1,6 +1,9 @@
 @use '../../../assets/styles/utils.scss' as *;
 
 .container {
+  position: relative;
+  translate: 0 -10rem;
+
   ul.tabs {
     position: relative;
     display: flex;

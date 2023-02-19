@@ -6,18 +6,18 @@ import { ReactComponent as InstagramLogo } from '../../assets/logos/instagram.sv
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.container}>
       <FooterBackground className={styles.footer_background} />
-      <ul className={global.container}>
-        <li>&#169; All Rights Reserved</li>
-        <li>
+      <div className={global.container}>
+        <p>&#169; All Rights Reserved</p>
+        <div>
           <ul>
             <li><a href="www.facebook.com"><FacebookLogo className={styles.facebook} /></a></li>
             <li><a href="www.instagram.com"><InstagramLogo className={styles.instagram} /></a></li>
           </ul>
           Privacy Policy
-        </li>
-      </ul>
+        </div>
+      </div>
     </footer>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import { FormDataContext } from '../../../context/FormDataContext';
 
+import global from '../../../assets/styles/globalstyles.module.scss';
 import styles from './Forms.module.scss';
 import FirstStep from './Steps/FirstStep';
 import SecondStep from './Steps/SecondStep';
@@ -29,7 +30,7 @@ const Forms = () => {
   });
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${global.container}`}>
       <ul className={styles.tabs}>
         <li className={(formStep === 1) ? styles.current_step : ''}>Step 1</li>
         <li className={(formStep === 2) ? styles.current_step : ''}>Step 2</li>

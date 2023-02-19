@@ -10,10 +10,6 @@ const Navbar = ({ solidBackground }) => {
   const { registerAgain } = useContext(FormDataContext);
   const [navToggled, setNavToggled] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener('resize', () => setNavToggled(false))
-  });
-
   return (
     <nav className={`${styles.container} ${(solidBackground) ? styles.solid : ''} ${global.container}`}>
       <div className={global.container}>
